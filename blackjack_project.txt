@@ -1,0 +1,12 @@
+Blackjack game rules - 
+1. Deck is unlimited 
+2. No jokers
+3. King/queen/jack count as 10 
+4. ace can be counted as 10 or 1 
+5. Cards have equal probability to be drawn 
+6. Crads are not removed from the deck as and when drawn 
+7. The computer is the dealer 
+
+Workflow for the game -- 
+ask user to play or not -- yes -- user's two cards and current score + computer's first card --
+ask to get another card or pass -- if score above 21 -- computer wins
