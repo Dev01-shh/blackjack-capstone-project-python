@@ -62,11 +62,12 @@ if ask == 'y':
         should_continue = input("Type 'y' to get another card, type 'n' to pass: ").lower().strip()
         if should_continue == 'y':
             user_card.append(random.choice(numbers))
-            user_score = calculate_score(user_card)
+            user_score = calculate_score(user_card)  # Re evaluating the score 
             continue
         elif should_continue == 'n':
-                computer_card.append(random.choice(numbers))
-                computer_score = calculate_score(computer_card)
+                while computer_score < 17:
+                    computer_card.append(random.choice(numbers))
+                    computer_score = calculate_score(computer_card)
                 if computer_score > 21 or computer_score == 21:
                      check_computer()
                      break
@@ -82,14 +83,17 @@ if ask == 'y':
                             break
                     elif computer_score > user_score:
                         print('You lose.')
-                        next_game = ("Do you want to play a game of blackjack? type 'y' or 'n' : ").lower().strip()
+                        next_game = input("Do you want to play a game of blackjack? type 'y' or 'n' : ").lower().strip()
                         if next_game == 'y':
                             continue
                         else:
                             break
+                    elif user_score == 21 and computer_score == 21:
+                        print("It's a draw !")
+                        break
         else:
             print('Please enter a valid input')
 else:
     print('Please enter valid input ')
-    
+
 
